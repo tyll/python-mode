@@ -46,10 +46,9 @@ if !pymode#Default('g:pymode_path', 1) || g:pymode_path
 python << EOF
 import sys, vim, os
 
-curpath = vim.eval("getcwd()")
 libpath = os.path.join(vim.eval("expand('<sfile>:p:h:h:h')"), 'pylibs')
 
-sys.path = [libpath, curpath] + vim.eval("g:pymode_paths") + sys.path
+sys.path = [libpath] + vim.eval("g:pymode_paths") + sys.path
 EOF
 
 endif " }}}
